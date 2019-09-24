@@ -8,7 +8,7 @@ def input_numbers():
         return numbers
     else:
         print("You should use proper format!")
-        input_numbers()
+        return input_numbers()
 
 
 
@@ -16,6 +16,8 @@ numbers = input_numbers()
 list_of_strings = numbers.split()
 
 for i in range(1, len(list_of_strings), 2):
+    print(list_of_strings[i])
+    print(list_of_strings[i+1])
     if list_of_strings[i] == "-":
         list_of_strings[i+1] = - int(list_of_strings[i+1])
 

@@ -6,7 +6,7 @@ def input_phone_number():
 
     if re.findall(r'[a-zA-Z]', phone_number):
         print("Phone number can't contain letters!")
-        input_phone_number()
+        return input_phone_number()
 
     clean_phone_number = re.sub(r'\D', '', phone_number)
     validation = len(clean_phone_number) == 12
@@ -15,13 +15,13 @@ def input_phone_number():
         return phone_number
     else:
         print("You should enter valid number!")
-        input_phone_number()
+        return input_phone_number()
 
 def input_password():
     password = input("Enter password: ")
     if len(password) < 8:
         print("Password is too short!")
-        input_password()
+        return input_password()
     else:
         pass_confirmation = input("Confirm password: ")
         if pass_confirmation == password:
@@ -32,7 +32,7 @@ def input_password():
             return pass_confirmation
         else:
             print("Password and password confirmation don't match!")
-            input_password()
+            return input_password()
 
 
 
