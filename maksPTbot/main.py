@@ -47,7 +47,7 @@ def send_three(message):
 
 @bot.message_handler(commands=['delete'])
 def delete_history(message):
-	with open('dialogs\\' + str(message.chat.id), 'w') as original_text:
+	with open('dialogs\\' + str(message.chat.id), 'w'):
 		pass
 
 @bot.message_handler(content_types=['text'])
@@ -58,8 +58,5 @@ def send_schedule(message):
 	if SCHEDULE.get(message.text):
 		text = '\n'.join(SCHEDULE.get(message.text))
 		bot.send_message(message.chat.id, text)
-
-
-
 
 bot.polling()
