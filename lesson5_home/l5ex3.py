@@ -18,3 +18,12 @@ for w in words:
 result_sentence = re.sub(r'\s+', ' ', result_sentence)
 
 print(result_sentence)
+
+print('-----------------------------------')
+words1 = list(sentence.split())
+copy = words1[:]
+for word in copy:
+    if copy.count(word) == n:
+        words1.remove(word)
+
+print(words1)
